@@ -1,0 +1,48 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="e2e">
+    <parameter name="username" value="siddhihinge@mailinator.com"></parameter>
+    <parameter name="password" value="Test@123"></parameter>
+    <test name="Test1">
+        <parameter name="productName" value="Nike air zoom pegasus 35"></parameter>
+        <parameter name="size" value="L"></parameter>
+        <parameter name="colour" value="Blue"></parameter>
+        <parameter name="qty" value="2"></parameter>
+        <parameter name="button" value="Shop kids"></parameter>
+        <classes>
+            <class name="EvershopTestNg">
+                <methods>
+                    <include name="login"/>
+                    <include name="findProductPage"/>
+                    <include name="addItemFromPDP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Test2">
+        <parameter name="button" value="Shop kids"></parameter>
+        <parameter name="productName" value="Chuck taylor all star"></parameter>
+        <parameter name="size" value="M"></parameter>
+        <parameter name="colour" value="Red"></parameter>
+        <parameter name="qty" value="1"></parameter>
+        <classes>
+            <class name="EvershopTestNg">
+                <methods>
+                    <include name="login"/>
+                    <include name="addItemFromShop"/>
+                    <include name="findProductPage"/>
+                    <include name="addItemFromPDP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Test3">
+        <classes>
+            <class name="EvershopTestNg">
+                <methods>
+                    <include name="login"/>
+                    <include name="logout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
